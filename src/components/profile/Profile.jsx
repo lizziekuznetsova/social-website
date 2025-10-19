@@ -1,4 +1,6 @@
 import photo from './sophie-profile.png'
+import Posts from './posts/Posts'
+
 
 export default function Profile(){
     return(
@@ -7,16 +9,8 @@ export default function Profile(){
                 <img className='prof_photo' src={photo} alt="" />
                 <h2 className='user'>Sophie T</h2>
             </div>
-            <div className='posts'>
-                <input className='type' type="text" />
-                <button className='btn'>Add Post</button>
-                <div className='post'>
-                    <img className='small_photo' src={photo} alt="" />
-                    <span className='user_post'>Sophie T</span>
-                    <p className='post_text'>Hello</p>
-                </div>
-            </div>
-
+           <Posts/>
+           
         </div>
     )
 }

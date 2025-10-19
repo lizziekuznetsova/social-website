@@ -1,11 +1,13 @@
-
+import React from "react";
+import {NavLink} from "react-router-dom";
 
 export default function Nav(){
     return(
         <div className="nav">
-            <a className="nav_link" href="">Profile</a>
-            <a className="nav_link" href="">Messages</a>
-            <a className="nav_link" href="">Users</a>
+            <NavLink className="nav_link" to="/">Profile</NavLink>
+            <NavLink className="nav_link" to="/messages">Messages</NavLink>
+            <NavLink className="nav_link" to="/users">Users</NavLink>
+            <NavLink className="nav_link" to="/dialogues">Dialogues</NavLink>
         </div>
     )
 }
