@@ -80,3 +80,9 @@ body{
   width: 100px;
   height: 70px;
 }
+.postLikes{
+  vertical-align: super;
+}
+.post_text{
+  display: inline-block;
+}

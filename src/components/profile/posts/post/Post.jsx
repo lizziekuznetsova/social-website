@@ -6,6 +6,7 @@ export default function Post(props){
                     <img className='small_photo' src={photo} alt="" />
                     <span className='user_post'>Sophie T</span>
                     <p className='post_text'>{props.message}</p>
+                    <span className='postLikes'>{props.likes}</span>
                 </div>
     )
 }
