@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
- function DialogueName(props){
+export default function DialogueName(props){
     return(
         <div>
 
@@ -18,8 +18,3 @@ import {NavLink} from "react-router-dom";
     )
 }
 
-function Test(){
-    return <h2>test</h2>
-}
-
-export {DialogueName, Test}

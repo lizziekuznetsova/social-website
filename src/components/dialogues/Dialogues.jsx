@@ -1,5 +1,5 @@
 import './Dialogue.css'
-import {DialogueName, Test} from './dialogueName/DialogueName'
+import DialogueName from './dialogueName/DialogueName'
 import Messages from './messages/Messages'
 
 // let dialogueNames=[
