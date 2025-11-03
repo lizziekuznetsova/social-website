@@ -8,15 +8,16 @@ import NotFoundPage from './components/not-found/NotFoundPage';
 import Dialogues from './components/dialogues/Dialogues';
 import { Name1, Name2, Name3} from './components/dialogues/Name';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <BrowserRouter>
         <Header/>
         <Nav/>
         <Routes>
-          <Route path='/' element={ <Profile/>}></Route>
-          <Route path='/dialogues' element={<Dialogues/>}></Route>
+          <Route path='/' element={Profile}></Route>
+           <Route path='/profile' element={<Profile postsData={props.state.postsData}/>}></Route>
+          <Route path='/dialogues' element={<Dialogues dialogueNames={props.state.dialogueNames} dialogueMessages={props.state.dialogueMessages}/>}></Route>
           <Route path='/dialogues/1' element={<Name1/>}/>
           <Route path='/dialogues/2' element={<Name2/>}/>
           <Route path='/dialogues/3' element={<Name3/>}/>
