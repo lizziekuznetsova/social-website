@@ -86,3 +86,24 @@ body{
 .post_text{
   display: inline-block;
 }
+.friends{
+  width: 100%;
+}
+.friendsNames{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.friendsItem{
+  /* display: flex; */
+  width: 33%;
+  text-align: center;
+}
+.friendsItem img{
+  width: 25%;
+  height: 47px;
+  object-fit: cover;
+}
+.friends_title{
+  text-align: center;
+}

@@ -13,15 +13,15 @@ function App(props) {
     <div className="App">
       <BrowserRouter>
         <Header/>
-        <Nav/>
+        <Nav friends={props.state.friends}/>
         <Routes>
           <Route path='/' element={Profile}></Route>
-           <Route path='/profile' element={<Profile postsData={props.state.postsData}/>}></Route>
-          <Route path='/dialogues' element={<Dialogues dialogueNames={props.state.dialogueNames} dialogueMessages={props.state.dialogueMessages}/>}></Route>
+           <Route path='/profile' element={<Profile addPost={props.addPost} postsData={props.state.postsData}/>}></Route>
+          <Route path='/dialogues' element={<Dialogues addMessage={props.addMessage} dialogueNames={props.state.dialogueNames} dialogueMessages={props.state.dialogueMessages}/>}></Route>
           <Route path='/dialogues/1' element={<Name1/>}/>
           <Route path='/dialogues/2' element={<Name2/>}/>
           <Route path='/dialogues/3' element={<Name3/>}/>
-           <Route path="*" element={<NotFoundPage />} />
+           <Route path="*" element={<NotFoundPage /> } />
         </Routes>
       </BrowserRouter>
     </div>

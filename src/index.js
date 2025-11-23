@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import state from './data/state';
+import { addPost, addMessage } from './data/state';
+import {renderTree} from './renderTree.js';
+
+renderTree(state);
 
 
 
@@ -82,20 +86,25 @@ import state from './data/state';
 //         id: "3"
 //     }
 // ]
+// console.log(addPost)
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// let renderTree=()=>{
+//   root.render(
+//   <React.StrictMode>
+//     <App 
+//     // postsData={postsData}
+//     // dialogueNames={dialogueNames}
+//     // dialogueMessages={dialogueMessages}
+//     state={state}
+//     addPost={addPost}
+//     addMessage={addMessage}
+//     />
+//   </React.StrictMode>
+// );
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App 
-    // postsData={postsData}
-    // dialogueNames={dialogueNames}
-    // dialogueMessages={dialogueMessages}
-    state={state}
-    />
-  </React.StrictMode>
-);
-
-
+// }
+// renderTree()
+// export {renderTree}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,6 +1,8 @@
+import React from 'react'
 import './Dialogue.css'
 import DialogueName from './dialogueName/DialogueName'
 import Messages from './messages/Messages'
+
 
 // let dialogueNames=[
 //     {
@@ -57,8 +59,14 @@ import Messages from './messages/Messages'
 // dialogueNames[2].name="lucy"
 // console.log(dialogueNames[2].name)
 
+let messageText=React.createRef()
 
 export default function Dialogues(props){
+
+    function addMessage(){
+        props.addMessage(messageText.current.value)
+    }
+
     return(
         <div className="dialogues profile">
             <div className="names">
@@ -78,9 +86,9 @@ export default function Dialogues(props){
                 </div>
 
              <div className="send_message">
-                    <input type="text" />
-                    <button>send</button>
-                </div>
+                    <input ref={messageText} type="text" />
+                    <button onClick={addMessage}>send</button>
+            </div>
         </div>
     )
 }

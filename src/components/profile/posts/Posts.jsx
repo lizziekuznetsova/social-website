@@ -1,4 +1,7 @@
 import Post from './post/Post'
+import React from 'react'
+
+
 
 // let messages=["new account", "got new shoes", "movie coming out soon", "buy tickets"]
 
@@ -24,15 +27,22 @@ import Post from './post/Post'
 //         likes: 8594
 //     }
 // ]
+let postText=React.createRef()
 
 
 export default function Posts(props){
+
+ function addPost(){
+    console.log(postText.current.value)
+   props.addPost(postText.current.value)
+}
+
     return(
          <div className='posts'>
-                <input className='type' type="text" />
-                <button className='btn'>Add Post</button>
+                <input className='type' type="text" ref={postText} />
+                <button onClick={addPost} className='btn'>Add Post</button>
 
-                {props.postsData.map((e) => <Post message={e.text} likes={e.likes} />)}
+                {props.postsData.map((e) => <Post addPost={props.addPost} message={e.text} likes={e.likes} />)}
                 
                 {/* <Post message={messages[0]}/>
                 <Post message={messages[1]}/>
