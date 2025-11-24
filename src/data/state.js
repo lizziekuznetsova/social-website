@@ -4,6 +4,7 @@ import ava3 from '../components/nav-bar/img/katie.jpg'
 import {renderTree} from '../renderTree'
 
 
+
 let state={
     postsData:[
          {
@@ -27,6 +28,7 @@ let state={
         likes: 8594
     }
     ],
+    posting: "cold winter",
 
     dialogueNames:[
          {
@@ -118,9 +120,10 @@ export let addPost=(postText)=>{
         likes: 3764,
     }
     state.postsData.unshift(newPost)
-    console.log(state.postsData)
-    console.log(state)
-    renderTree();
+    // console.log(state.postsData)
+    // console.log(state)
+    state.posting="";
+    renderTree(state);
     
 }
     console.log(state.dialogueMessages)
@@ -131,10 +134,15 @@ export let addMessage=(messageText)=>{
     }
     state.dialogueMessages.push(newMessage)
     console.log(state.dialogueMessages)
-    renderTree();
+    renderTree(state);
 }
 
+export function onPostChange(text){
+    state.posting=text;
+    renderTree(state);
+}
 
+console.log(state.posting)
 
 
 

@@ -8,6 +8,7 @@ import NotFoundPage from './components/not-found/NotFoundPage';
 import Dialogues from './components/dialogues/Dialogues';
 import { Name1, Name2, Name3} from './components/dialogues/Name';
 
+
 function App(props) {
   return (
     <div className="App">
@@ -16,7 +17,7 @@ function App(props) {
         <Nav friends={props.state.friends}/>
         <Routes>
           <Route path='/' element={Profile}></Route>
-           <Route path='/profile' element={<Profile addPost={props.addPost} postsData={props.state.postsData}/>}></Route>
+           <Route path='/profile' element={<Profile onPostChange={props.onPostChange} posting={props.state.posting} addPost={props.addPost} postsData={props.state.postsData}/>}></Route>
           <Route path='/dialogues' element={<Dialogues addMessage={props.addMessage} dialogueNames={props.state.dialogueNames} dialogueMessages={props.state.dialogueMessages}/>}></Route>
           <Route path='/dialogues/1' element={<Name1/>}/>
           <Route path='/dialogues/2' element={<Name2/>}/>

@@ -55,17 +55,6 @@ export default function Nav(props){
                             )
                         }
                     )}
-                        {/* <img src={friends[0].avatar} alt="" />
-                        <p>{friends[0].name}</p> */}
-                   
-                     {/* <div className="friendsItem">
-                        <img src={friends[1].avatar} alt="" />
-                        <p>{friends[1].name}</p>
-                    </div>
-                     <div className="friendsItem">
-                        <img src={friends[2].avatar} alt="" />
-                        <p>{friends[2].name}</p>
-                    </div> */}
                 </div>
             </div>
         </div>

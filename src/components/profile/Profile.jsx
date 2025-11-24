@@ -11,7 +11,7 @@ export default function Profile(props){
                 <h2 className='user'>Sophie T</h2>
             </div> */}
             <ProfileInfo/>
-           <Posts postsData={props.postsData} addPost={props.addPost}/>
+           <Posts onPostChange={props.onPostChange} posting={props.posting} postsData={props.postsData} addPost={props.addPost}/>
         
            
         </div>

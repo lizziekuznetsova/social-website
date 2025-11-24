@@ -1,3 +1,4 @@
+import { onPostChange } from '../../../data/state'
 import Post from './post/Post'
 import React from 'react'
 
@@ -29,17 +30,21 @@ import React from 'react'
 // ]
 let postText=React.createRef()
 
+console.log(postText)
 
 export default function Posts(props){
 
  function addPost(){
-    console.log(postText.current.value)
+    console.log(postText)
    props.addPost(postText.current.value)
 }
 
+function onPostChange(){
+    props.onPostChange(postText.current.value)
+}
     return(
          <div className='posts'>
-                <input className='type' type="text" ref={postText} />
+                <input onChange={onPostChange} value={props.posting} className='type' type="text" ref={postText} />
                 <button onClick={addPost} className='btn'>Add Post</button>
 
                 {props.postsData.map((e) => <Post addPost={props.addPost} message={e.text} likes={e.likes} />)}

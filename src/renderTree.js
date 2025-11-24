@@ -6,7 +6,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import state from './data/state';
-import { addPost, addMessage } from './data/state';
+import { addPost, addMessage, onPostChange } from './data/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -17,9 +17,12 @@ let renderTree=(state)=>{
         state={state}
         addPost={addPost}
         addMessage={addMessage}
+        onPostChange={onPostChange}
         />
     </React.StrictMode>
     )
 }
 
 export {renderTree}
+
+reportWebVitals()
