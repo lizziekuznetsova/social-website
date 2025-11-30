@@ -30,7 +30,7 @@ import React from 'react'
 // ]
 let postText=React.createRef()
 
-console.log(postText)
+// console.log(postText)
 
 export default function Posts(props){
 

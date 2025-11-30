@@ -30,7 +30,8 @@ let state={
     ],
     posting: "cold winter",
 
-    dialogueNames:[
+    dialoguesArray: {
+         dialogueNames:[
          {
         name: "Anya Taylor-Joy",
         id: "1",
@@ -63,6 +64,8 @@ let state={
     }
     ],
 
+
+
     dialogueMessages:[
     {
         message: "Hi, how are you?",
@@ -81,6 +84,8 @@ let state={
         id: "3"
     }
     ],
+},
+
 
     friends: [
         {
@@ -126,14 +131,14 @@ export let addPost=(postText)=>{
     renderTree(state);
     
 }
-    console.log(state.dialogueMessages)
+    // console.log(state.dialoguesArray.dialogueMessages)
 export let addMessage=(messageText)=>{
     let newMessage={
          message: messageText,
         id: 13,
     }
-    state.dialogueMessages.push(newMessage)
-    console.log(state.dialogueMessages)
+    state.dialoguesArray.dialogueMessages.push(newMessage)
+    // console.log(state.dialoguesArray.dialogueMessages)
     renderTree(state);
 }
 
@@ -144,7 +149,9 @@ export function onPostChange(text){
 
 console.log(state.posting)
 
-
+export function subscribe(observer){
+    renderTree=observer
+}
 
 
 // let mass=[1, "2", 3, 4, {

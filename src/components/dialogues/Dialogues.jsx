@@ -70,14 +70,14 @@ export default function Dialogues(props){
     return(
         <div className="dialogues profile">
             <div className="names">
-                {props.dialogueNames.map((item) => <DialogueName id={item.id} name={item.name}/>) }
+                {props.dialoguesArray.dialogueNames.map((item) => <DialogueName id={item.id} name={item.name}/>) }
                 {/* <DialogueName id={dialogueNames[0].id} name={dialogueNames[0].name}/>
                 <DialogueName id={dialogueNames[1].id} name={dialogueNames[1].name}/>
                 <DialogueName id={dialogueNames[2].id} name={dialogueNames[2].name}/>
                 <DialogueName id={dialogueNames[3].id} name={dialogueNames[3].name}/> */}
             </div>
                 <div>
-                    {props.dialogueMessages.map((element) => <Messages messages={element.message}/>)}
+                    {props.dialoguesArray.dialogueMessages.map((element) => <Messages messages={element.message}/>)}
                 {/* <Messages messages={dialogueMessages[0].message}/>
                 <Messages messages={dialogueMessages[1].message}/>
                 <Messages messages={dialogueMessages[2].message}/>

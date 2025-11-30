@@ -1,28 +1,28 @@
 
 
-import React from 'react'
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-// import state from './data/state';
-import { addPost, addMessage, onPostChange } from './data/state';
+// import React from 'react'
+// import ReactDOM from 'react-dom/client';
+// import './index.css';
+// import App from './App';
+// import reportWebVitals from './reportWebVitals';
+// // import state from './data/state';
+// import { addPost, addMessage, onPostChange } from './data/state';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let renderTree=(state)=>{
-    root.render(
-    <React.StrictMode>
-        <App 
-        state={state}
-        addPost={addPost}
-        addMessage={addMessage}
-        onPostChange={onPostChange}
-        />
-    </React.StrictMode>
-    )
-}
+// let renderTree=(state)=>{
+//     root.render(
+//     <React.StrictMode>
+//         <App 
+//         state={state}
+//         addPost={addPost}
+//         addMessage={addMessage}
+//         onPostChange={onPostChange}
+//         />
+//     </React.StrictMode>
+//     )
+// }
 
-export {renderTree}
+// export {renderTree}
 
-reportWebVitals()
+// reportWebVitals()
