@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state from './data/state';
-import { addPost, addMessage, onPostChange, subscribe } from './data/state';
+// import state from './data/state';
+import store from './data/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -14,9 +14,9 @@ let renderTree=(state)=>{
     <React.StrictMode>
         <App 
         state={state}
-        addPost={addPost}
-        addMessage={addMessage}
-        onPostChange={onPostChange}
+        addPost={store.addPost.bind(store)}
+        addMessage={store.addMessage.bind(store)}
+        onPostChange={store.onPostChange.bind(store)}
         />
     </React.StrictMode>
     )
@@ -25,9 +25,9 @@ let renderTree=(state)=>{
 export {renderTree}
 
 
-renderTree(state);
+renderTree(store.getStart());
 
-subscribe(renderTree)
+store.subscribe(renderTree)
 
 reportWebVitals()
 

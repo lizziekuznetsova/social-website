@@ -4,8 +4,8 @@ import ava3 from '../components/nav-bar/img/katie.jpg'
 import {renderTree} from '../renderTree'
 
 
-
-let state={
+let store={
+    _state:{
     postsData:[
          {
         text: "new account",
@@ -114,43 +114,46 @@ let state={
         name: 'Katie Vermont'
         },
     ]
-}
+},
 
-console.log(state.postsData)
+// console.log(state.postsData)
 
-export let addPost=(postText)=>{
+addPost(postText){
     let newPost={
          text: postText,
         id: 7,
         likes: 3764,
     }
-    state.postsData.unshift(newPost)
+    this._state.postsData.unshift(newPost)
     // console.log(state.postsData)
     // console.log(state)
-    state.posting="";
-    renderTree(state);
+    this._state.posting="";
+    this.renderTree(this._state);
     
-}
+},
     // console.log(state.dialoguesArray.dialogueMessages)
-export let addMessage=(messageText)=>{
+addMessage(messageText){
     let newMessage={
          message: messageText,
         id: 13,
     }
-    state.dialoguesArray.dialogueMessages.push(newMessage)
+   this._state.dialoguesArray.dialogueMessages.push(newMessage)
     // console.log(state.dialoguesArray.dialogueMessages)
-    renderTree(state);
-}
+    this.renderTree(this._state);
+},
 
-export function onPostChange(text){
-    state.posting=text;
-    renderTree(state);
-}
+onPostChange(text){
+    this._state.posting=text;
+    this.renderTree(this._state);
+},
 
-console.log(state.posting)
+// console.log(state.posting)
 
-export function subscribe(observer){
-    renderTree=observer
+subscribe(observer){
+    this.renderTree=observer;
+},
+getStart(){
+    return this._state
 }
 
 
@@ -165,4 +168,8 @@ export function subscribe(observer){
 // mass.push(text)
 // console.log(mass)
 
-export default state
+
+}
+
+export default store
+
