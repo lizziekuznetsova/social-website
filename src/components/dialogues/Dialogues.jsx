@@ -64,8 +64,16 @@ let messageText=React.createRef()
 export default function Dialogues(props){
 
     function addMessage(){
-        props.addMessage(messageText.current.value)
+        // props.addMessage(messageText.current.value)
+        props.dispatch({type: "ADD_MESSAGE", text: messageText.current.value})
     }
+    function onDialogueChange(){
+    // props.onPostChange(postText.current.value)
+    let text=messageText.current.value
+    console.log(text)
+    props.dispatch({type: 'DIALOGUE_CHANGE', text: text})
+
+}
 
     return(
         <div className="dialogues profile">
@@ -86,7 +94,7 @@ export default function Dialogues(props){
                 </div>
 
              <div className="send_message">
-                    <input ref={messageText} type="text" />
+                    <input onChange={onDialogueChange} value={props.talking} ref={messageText} type="text" />
                     <button onClick={addMessage}>send</button>
             </div>
         </div>

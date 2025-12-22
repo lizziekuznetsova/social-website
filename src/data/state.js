@@ -84,7 +84,9 @@ let store={
         id: "3"
     }
     ],
+    talking: "start a conversation"
 },
+
 
 
     friends: [
@@ -118,34 +120,34 @@ let store={
 
 // console.log(state.postsData)
 
-addPost(postText){
-    let newPost={
-         text: postText,
-        id: 7,
-        likes: 3764,
-    }
-    this._state.postsData.unshift(newPost)
-    // console.log(state.postsData)
-    // console.log(state)
-    this._state.posting="";
-    this.renderTree(this._state);
+// addPost(postText){
+//     let newPost={
+//          text: postText,
+//         id: 7,
+//         likes: 3764,
+//     }
+//     this._state.postsData.unshift(newPost)
+//     // console.log(state.postsData)
+//     // console.log(state)
+//     this._state.posting="";
+//     this.renderTree(this._state);
     
-},
+// },
     // console.log(state.dialoguesArray.dialogueMessages)
-addMessage(messageText){
-    let newMessage={
-         message: messageText,
-        id: 13,
-    }
-   this._state.dialoguesArray.dialogueMessages.push(newMessage)
-    // console.log(state.dialoguesArray.dialogueMessages)
-    this.renderTree(this._state);
-},
+// addMessage(messageText){
+//     let newMessage={
+//          message: messageText,
+//         id: 13,
+//     }
+//    this._state.dialoguesArray.dialogueMessages.push(newMessage)
+//     // console.log(state.dialoguesArray.dialogueMessages)
+//     this.renderTree(this._state);
+// },
 
-onPostChange(text){
-    this._state.posting=text;
-    this.renderTree(this._state);
-},
+// onPostChange(text){
+//     this._state.posting=text;
+//     this.renderTree(this._state);
+// },
 
 // console.log(state.posting)
 
@@ -154,8 +156,37 @@ subscribe(observer){
 },
 getStart(){
     return this._state
+},
+dispatch(action){
+if(action.type=='ADD_POST'){
+    let newPost={
+         text: this._state.posting,
+        id: 7,
+        likes: 3764,
+    }
+    this._state.postsData.unshift(newPost)
+    console.log(newPost, this._state.postsData)
+    // this._state.posting="";
+    this.renderTree(this._state);
+    
+
+}else if(action.type=='POST-CHANGE'){
+    this._state.posting=action.text;
+    this.renderTree(this._state);
+}else if(action.type=="ADD_MESSAGE"){
+     let newMessage={
+         message: this._state.dialoguesArray.talking,
+        id: 13,
+    }
+   this._state.dialoguesArray.dialogueMessages.push(newMessage)
+    // console.log(state.dialoguesArray.dialogueMessages)
+    this.renderTree(this._state);
+}else if(action.type=="DIALOGUE_CHANGE"){
+    this._state.dialoguesArray.talking=action.text;
+    this.renderTree(this._state);
 }
 
+}
 
 // let mass=[1, "2", 3, 4, {
 //     id:6,

@@ -35,16 +35,24 @@ let postText=React.createRef()
 export default function Posts(props){
 
  function addPost(){
-    console.log(postText)
-   props.addPost(postText.current.value)
+    console.log(postText.current.value)
+    props.dispatch({type: 'ADD_POST'})
+    console.log("working dispatch")
+    // postText.current.value=''
+//    props.addPost(postText.current.value)
 }
 
 function onPostChange(){
-    props.onPostChange(postText.current.value)
+    // props.onPostChange(postText.current.value)
+    let text=postText.current.value
+    console.log(text)
+    props.dispatch({type: 'POST-CHANGE', text: text})
+
 }
     return(
          <div className='posts'>
-                <input onChange={onPostChange} value={props.posting} className='type' type="text" ref={postText} />
+
+                <input onChange={onPostChange} value={props.posting} ref={postText}  className='type' type="text" />
                 <button onClick={addPost} className='btn'>Add Post</button>
 
                 {props.postsData.map((e) => <Post addPost={props.addPost} message={e.text} likes={e.likes} />)}
