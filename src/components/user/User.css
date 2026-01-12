@@ -1,0 +1,29 @@
+
+
+.users_container{
+    background-color: #464f79;
+    border-radius: 10px;
+    width: 200%;
+    height: calc(100vh - 250px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_user{
+    width: 150px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #6e79ac;
+    color: white;
+    margin-top: 10px;
+    border: none;
+}
+.user_list{
+    margin-top: 200px;
+}
+
+.active{
+    background-color: blue;
+}

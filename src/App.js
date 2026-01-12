@@ -7,6 +7,7 @@ import {NavLink, BrowserRouter, Route, Routes} from 'react-router-dom';
 import NotFoundPage from './components/not-found/NotFoundPage';
 import Dialogues from './components/dialogues/Dialogues';
 import { Name1, Name2, Name3} from './components/dialogues/Name';
+import Users from "./components/user/User";
 
 
 function App(props) {
@@ -17,10 +18,14 @@ function App(props) {
         <Nav friends={props.state.friends}/>
         <Routes>
           <Route path='/' element={Profile}></Route>
+          
            <Route path='/profile' element={<Profile 
            posting={props.state.posting}
             dispatch={props.dispatch} 
             postsData={props.state.postsData}/>}></Route>
+
+             <Route path='/users' element={<Users userPage={props.state.userPage}/>}></Route>
+
           <Route path='/dialogues' element={<Dialogues 
           dispatch={props.dispatch}
           // addMessage={props.addMessage}

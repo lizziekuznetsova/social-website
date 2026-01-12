@@ -1,8 +1,10 @@
 // import ava1 from 'components/nav-bar/img/andrew.png'
 import ava2 from '../components/nav-bar/img/tommy.jpg'
 import ava3 from '../components/nav-bar/img/katie.jpg'
-import {renderTree} from '../renderTree'
+// import {renderTree} from '../renderTree'
 
+const ADD__POST='ADD_POST';
+const POST_CHANGE='POST-CHANGE';
 
 let store={
     _state:{
@@ -115,7 +117,19 @@ let store={
         avatar: ava3,
         name: 'Katie Vermont'
         },
-    ]
+    ],
+
+    userPage: {
+        friends: [
+            'Katie Vermont', 'Alexandra Daddario', 'Andrew Garfield'
+        ],
+        collegues: [
+            'Timmy Jones', 'Steve Harrington'
+        ],
+        family: [
+        'Mum', 'Dad', 'sisters'
+        ]
+    }
 },
 
 // console.log(state.postsData)
@@ -158,7 +172,7 @@ getStart(){
     return this._state
 },
 dispatch(action){
-if(action.type=='ADD_POST'){
+if(action.type===ADD__POST){
     let newPost={
          text: this._state.posting,
         id: 7,
@@ -170,7 +184,7 @@ if(action.type=='ADD_POST'){
     this.renderTree(this._state);
     
 
-}else if(action.type=='POST-CHANGE'){
+}else if(action.type==POST_CHANGE){
     this._state.posting=action.text;
     this.renderTree(this._state);
 }else if(action.type=="ADD_MESSAGE"){
@@ -188,18 +202,15 @@ if(action.type=='ADD_POST'){
 
 }
 
-// let mass=[1, "2", 3, 4, {
-//     id:6,
-//     text:"text"
-// }]
-// let text={
-//      id:9,
-//     text:"hello"
-// }
-// mass.push(text)
-// console.log(mass)
 
+}
 
+export let addPostAC=()=>{
+    return{type: ADD__POST}
+}
+
+export let onPostChangeAC=(text)=>{
+    return{type: POST_CHANGE, text: text}
 }
 
 export default store

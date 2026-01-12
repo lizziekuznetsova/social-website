@@ -1,6 +1,8 @@
 import { onPostChange } from '../../../data/state'
 import Post from './post/Post'
 import React from 'react'
+import { addPostAC, onPostChangeAC } from '../../../data/state'
+
 
 
 
@@ -32,11 +34,16 @@ let postText=React.createRef()
 
 // console.log(postText)
 
+// let addPostAC=()=>{
+//     return{type: 'ADD_POST'}
+// }
+
+
 export default function Posts(props){
 
  function addPost(){
     console.log(postText.current.value)
-    props.dispatch({type: 'ADD_POST'})
+    props.dispatch(addPostAC())
     console.log("working dispatch")
     // postText.current.value=''
 //    props.addPost(postText.current.value)
@@ -44,9 +51,10 @@ export default function Posts(props){
 
 function onPostChange(){
     // props.onPostChange(postText.current.value)
-    let text=postText.current.value
-    console.log(text)
-    props.dispatch({type: 'POST-CHANGE', text: text})
+    let textPost=postText.current.value
+    // console.log(text)
+    // let action= 
+    props.dispatch(onPostChangeAC(textPost))
 
 }
     return(
@@ -65,18 +73,3 @@ function onPostChange(){
     )
 }
 
-// function Name(name){
-//     console.log("hello "+name);
-// }
-
-// Name("Liza");
-
-// let dog={
-//     name: "Lucy",
-//     color: "apricot",
-//     age: 8
-// }
-// console.log("my dogs name is "+dog.name);
-
-// dog.age=1
-// console.log(dog.age)
