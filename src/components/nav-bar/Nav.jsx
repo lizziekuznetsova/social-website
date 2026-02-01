@@ -37,7 +37,6 @@ export default function Nav(props){
     return(
         <div className="nav">
             <NavLink className="nav_link" to="profile">Profile</NavLink>
-            <NavLink className="nav_link" to="/messages">Messages</NavLink>
             <NavLink className="nav_link" to="/users">Users</NavLink>
             <NavLink className="nav_link" to="/dialogues">Dialogues</NavLink>
             <div className="friends">
@@ -57,6 +56,7 @@ export default function Nav(props){
                     )}
                 </div>
             </div>
+             <NavLink className="nav_link" to="/help">Help Service</NavLink>
         </div>
     )
 }

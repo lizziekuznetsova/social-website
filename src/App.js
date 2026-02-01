@@ -8,6 +8,7 @@ import NotFoundPage from './components/not-found/NotFoundPage';
 import Dialogues from './components/dialogues/Dialogues';
 import { Name1, Name2, Name3} from './components/dialogues/Name';
 import Users from "./components/user/User";
+import HelpService from './components/helpService/HelpService';
 
 
 function App(props) {
@@ -35,6 +36,7 @@ function App(props) {
           <Route path='/dialogues/1' element={<Name1/>}/>
           <Route path='/dialogues/2' element={<Name2/>}/>
           <Route path='/dialogues/3' element={<Name3/>}/>
+          <Route path='/help' element={<HelpService/>}></Route>
            <Route path="*" element={<NotFoundPage /> } />
         </Routes>
       </BrowserRouter>

@@ -1,0 +1,11 @@
+
+
+.modal{
+    text-align: center;
+    margin: 0 auto;
+    width: 60%;
+    height: 50%;
+    border: 1px solid rgb(52, 184, 227);
+    z-index: 15;
+    background-color: red;
+}

@@ -32,7 +32,11 @@ body{
   border-radius: 10px;
   line-height: 250px;
   padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .nav{
     background-color: rgb(70, 79, 121);
     grid-area: nav;
@@ -106,4 +110,12 @@ body{
 }
 .friends_title{
   text-align: center;
+}
+.helpServ{
+  background: #464f79;
+  width: 200%;
+  height: 70vh;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 50px;
 }
